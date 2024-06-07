@@ -31,7 +31,7 @@
                 <label>Tipo de Usuario:</label><br>
                 <select name="perfil" required>
                     <?php
-                        foreach ($datos_vista as $tipos) {
+                        foreach ($datos_vista['tipos'] as $tipos) {
                             echo '<option value="'.$tipos['perfil'].'">'.$tipos['nombrePerfil'].'</option>';
                         }
                     ?>
@@ -40,9 +40,9 @@
                 <input type="submit" value="Enviar">
             </form>
             <?php 
-                /*if (isset($datos_vista)) {  //error pendiente
-                    echo "<p class='error-message'>" . $datos_vista . "</p>";
-                }*/
+                if (isset($datos_vista['mensaje'])) {
+                    echo "<p class='error-message'>" . $datos_vista['mensaje'] . "</p>";
+                }
             ?>
             <p><a href="index.php?c=Controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
         </div>

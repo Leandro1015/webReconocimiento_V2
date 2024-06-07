@@ -1,5 +1,5 @@
 <?php
-require_once '../modelos/m_identificacion.php';
+require_once './modelos/m_identificacion.php';
 
 class Controlador_sesion {
     public $nombre_vista;
@@ -44,7 +44,7 @@ class Controlador_sesion {
 
         $datos_vista = $this->identificacion->listarTipos();
 
-        return $datos_vista;
+        return ['tipos' => $datos_vista]; // Devolver los tipos de usuario en un array asociativo
     }
 
     public function cerrarSesion(){
@@ -89,7 +89,9 @@ class Controlador_sesion {
             $this->nombre_vista = './vistas/registro_form';
         }
 
-        return $msj;
+        $this->nombre_vista = './vistas/registro_form';
+        $datos_vista = $this->identificacion->listarTipos();
+        return ['tipos' => $datos_vista, 'mensaje' => $msj];
     }
 
     private function validarCampos() {
