@@ -1,8 +1,8 @@
 
-CREATE TABLE tipoUsuario (
-    tipoUsuario char(1) NOT NULL,
-    nombreTipo varchar(50) NOT NULL,
-    constraint pk_tipo_usuario PRIMARY KEY (tipoUsuario)
+CREATE TABLE perfil(
+    perfil char(1) NOT NULL,
+    nombrePerfil varchar(50) NOT NULL,
+    constraint pk_perfil PRIMARY KEY (perfil)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Tabla usuario
@@ -12,8 +12,8 @@ CREATE TABLE usuario (
     correo varchar(255) NOT NULL,
     contrasenia varchar(100) NOT NULL,
     webReconocimiento varchar(50) NULL,
-    tipoUsuario char(1) NOT NULL,
-    CONSTRAINT fk_tipo_usuario FOREIGN KEY (tipoUsuario) REFERENCES tipoUsuario(tipoUsuario), 
+    perfil char(1) NOT NULL,
+    CONSTRAINT fk_perfil FOREIGN KEY (perfil) REFERENCES perfil(perfil), 
     constraint pk_usuario PRIMARY KEY (num_usuario),
     constraint correo_unico UNIQUE(correo),
     constraint web_unica UNIQUE(webReconocimiento)  
@@ -32,17 +32,17 @@ CREATE TABLE reconocimiento (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
--- Inserciones en tipoUsuario
-INSERT INTO tipoUsuario (tipoUsuario, nombreTipo) VALUES ('A', 'Alumno');
-INSERT INTO tipoUsuario (tipoUsuario, nombreTipo) VALUES ('P', 'Profesor');
+-- Inserciones en tipoPerfil
+INSERT INTO perfil (perfil, nombrePerfil) VALUES ('A', 'Alumno');
+INSERT INTO perfil (perfil, nombrePerfil) VALUES ('P', 'Profesor');
 
 -- Inserciones en usuario
-INSERT INTO usuario (num_usuario, nombre, correo, contrasenia, webReconocimiento, tipoUsuario) VALUES 
+INSERT INTO usuario (num_usuario, nombre, correo, contrasenia, webReconocimiento, perfil) VALUES 
 (1, 'Cheyci', 'cheyci@example.com', '1234', 'cheyci123', 'A'),
 (2, 'Lucia', 'lucia@example.com', '1234', NULL, 'A'),
 (3, 'Pamela', 'pamela@example.com', '1234', 'pamela123', 'A'),
 (4, 'Jason', 'jason@example.com', '1234', 'jason123', 'A'),
-(5, 'Miguel', 'profesorx@example.com', '1234', NULL, 'P');
+(5, 'Miguel', 'profesormiguel@example.com', '1234', NULL, 'P');
 
 -- Inserciones en reconocimiento
 INSERT INTO reconocimiento (momento, descripcion, idAlumnoEnvia, idAlumnoRecibe) VALUES 

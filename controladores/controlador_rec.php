@@ -79,7 +79,7 @@
         }
 
         public function vistaProfesor() {
-            if ($_SESSION['tipoUsuario'] === 'P') {
+            if ($_SESSION['perfil'] === 'P') {
                 $this->nombre_vista = './vistas/profesor';
             } else {
                 $this->nombre_vista = './vistas/inicio';

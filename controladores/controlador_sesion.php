@@ -1,5 +1,5 @@
 <?php
-require_once './modelos/m_identificacion.php';
+require_once '../modelos/m_identificacion.php';
 
 class Controlador_sesion {
     public $nombre_vista;
@@ -25,7 +25,7 @@ class Controlador_sesion {
                     session_start();
                 }
                 $_SESSION['num_usuario'] = $resultado['num_usuario']; 
-                $_SESSION['tipoUsuario'] = $resultado['tipoUsuario'];
+                $_SESSION['perfil'] = $resultado['perfil'];
                 $this->nombre_vista = './vistas/inicio';
             } else {
                 $msj = "Correo y/o contraseña incorrectos.";
@@ -61,7 +61,7 @@ class Controlador_sesion {
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $contrasenia = $_POST['contrasenia'];
-            $tipo = $_POST['tipoUsuario'];
+            $tipo = $_POST['perfil'];
 
             if (!empty($_POST['webReconocimiento'])) {
                 $webReconocimiento = $_POST['webReconocimiento'];

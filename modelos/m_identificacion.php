@@ -6,7 +6,7 @@
         public function iniciarSesion($correo, $contrasenia)
         {
             // Consulta preparada para buscar el usuario por correo
-            $sql = "SELECT num_usuario, nombre, contrasenia, tipoUsuario FROM usuario WHERE correo = ?";
+            $sql = "SELECT num_usuario, nombre, contrasenia, perfil FROM usuario WHERE correo = ?";
             
             // Preparar la consulta
             $consultaPreparada = $this->conexion->prepare($sql);
@@ -57,7 +57,7 @@
             $con_cifrada = password_hash($contrasenia, PASSWORD_DEFAULT); // Contraseña cifrada
             
             // Consulta preparada para insertar un nuevo alumno
-            $sql = "INSERT INTO usuario (num_usuario, nombre, correo, contrasenia, webReconocimiento, tipoUsuario) 
+            $sql = "INSERT INTO usuario (num_usuario, nombre, correo, contrasenia, webReconocimiento, perfil) 
                     VALUES (?, ?, ?, ?, ?, ?)";
             
             // Preparar la consulta
@@ -135,7 +135,7 @@
         }
 
         public function listarTipos() {
-            $sql = "SELECT tipoUsuario, nombreTipo FROM tipoUsuario";
+            $sql = "SELECT perfil, nombrePerfil FROM perfil";
             $resultado = $this->conexion->query($sql);
         
             $tipos = [];

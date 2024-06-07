@@ -42,7 +42,7 @@
 
         public function obtenerAlumnos($idAlumnoEnvia) {
             // Consulta preparada para seleccionar alumnos que no son el remitente
-            $sql = "SELECT num_usuario, nombre FROM usuario WHERE num_usuario != ? ORDER BY num_usuario";
+            $sql = "SELECT num_usuario, nombre FROM usuario WHERE perfil = 'A' AND num_usuario != ? ORDER BY num_usuario ";
             
             // Preparar la consulta
             $consultaPreparada = $this->conexion->prepare($sql);

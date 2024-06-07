@@ -28,20 +28,21 @@
                 <label>Página Web de Reconocimiento:</label><br>
                 <input type="text" name="webReconocimiento"><br><br>
 
-                <label>Tipo de Usuario:</label>
-                <select name="tipoUsuario" required>
+                <label>Tipo de Usuario:</label><br>
+                <select name="perfil" required>
                     <?php
                         foreach ($datos_vista as $tipos) {
-                            echo '<option value="'.$tipos['tipoUsuario'].'">'.$tipos['nombreTipo'].'</option>';
+                            echo '<option value="'.$tipos['perfil'].'">'.$tipos['nombrePerfil'].'</option>';
                         }
                     ?>
                 </select>
+                <br><br>
                 <input type="submit" value="Enviar">
             </form>
             <?php 
-               /* if (isset($datos_vista)) {  //error pendiente
+                /*if (isset($datos_vista)) {  //error pendiente
                     echo "<p class='error-message'>" . $datos_vista . "</p>";
-                } */
+                }*/
             ?>
             <p><a href="index.php?c=Controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
         </div>

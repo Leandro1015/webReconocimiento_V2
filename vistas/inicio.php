@@ -12,8 +12,8 @@
             <p><a href="index.php?c=Controlador_rec&m=mostrarFREC" class="boton">Enviar Reconocimiento</a></p>
             <p><a href="index.php?c=Controlador_rec&m=verMisReconocimientos" class="boton">Ver Mis Reconocimientos</a></p>
             <?php
-                if ($_SESSION['tipoUsuario'] === 'P') {
-                    echo '<p><a href="index.php?=c=Controlador_rec&m=vistaProfesor">Profesores</a></p>';
+                if ($_SESSION['perfil'] === 'P') {
+                    echo '<p><a href="index.php?c=Controlador_rec&m=vistaProfesor">Profesores</a></p>';
                 }
             ?>
             <p><a href="index.php?c=Controlador_sesion&m=cerrarSesion" class="boton">Cerrar Sesión</a></p>
