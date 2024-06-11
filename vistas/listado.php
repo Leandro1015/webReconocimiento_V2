@@ -16,7 +16,7 @@
                         foreach ($datos_vista as $reconocimiento) {
                             echo "<li>";
                             echo "<span class='reconocimiento'>Reconocimiento " . $orden . ":</span>";
-                            echo "<a href='index.php?c=Controlador_rec&m=verUnReconocimiento&id=" . $reconocimiento['idReconocimiento'] . "'>Ver reconocimiento</a>";
+                            echo "<a href='index.php?c=controlador_rec&m=verUnReconocimiento&id=" . $reconocimiento['idReconocimiento'] . "'>Ver reconocimiento</a>";
                             echo "</li>";
                             $orden++;
                         }
@@ -25,7 +25,7 @@
                     }
                 ?>
             </ul>
-            <p><a href="index.php?c=Controlador_rec&m=mostrarInicio" class="boton">Ir a la página de inicio</a></p>
+            <p><a href="index.php?c=controlador_rec&m=mostrarInicio" class="boton">Ir a la página de inicio</a></p>
         </div>
     </body>
 </html>

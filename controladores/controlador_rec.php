@@ -19,7 +19,7 @@
             $reconocimiento = new M_reconocimiento();
             $datos_vista = $reconocimiento->obtenerAlumnos($idAlumnoEnvia);
             
-            $this->nombre_vista = './vistas/enviar_reconocimiento';
+            $this->nombre_vista = 'enviar_reconocimiento';
         
             return $datos_vista;
         }
@@ -39,14 +39,14 @@
                 if ($resultado === true) {
                     $this->ultimoReconocimiento($idAlumnoRecibe);
 
-                    $this->nombre_vista = './vistas/exito';
+                    $this->nombre_vista = 'exito';
                 } else {
                     $msj = "Hubo un error al enviar el reconocimiento.";
-                    $this->nombre_vista = './vistas/enviar_reconocimiento';
+                    $this->nombre_vista = 'enviar_reconocimiento';
                 }
             } else { 
                 $msj = "Por favor, complete todos los campos.";
-                $this->nombre_vista = './vistas/enviar_reconocimiento';
+                $this->nombre_vista = 'enviar_reconocimiento';
             }
 
             return $msj;
@@ -56,19 +56,19 @@
             
             $datos_vista = $this->reconocimiento->obtenerReconocimientos($idAlumnoRecibe);
         
-            $this->nombre_vista = './vistas/listado';
+            $this->nombre_vista = 'listado';
 
             return $datos_vista;
         }
 
         public function verUnReconocimiento($id) {
             $datos_vista = $this->reconocimiento->obtenerReconocimiento($id);
-            $this->nombre_vista = './vistas/verMiReconocimiento';
+            $this->nombre_vista = 'verMiReconocimiento';
             return $datos_vista;
         }
 
         public function mostrarInicio() {
-            $this->nombre_vista = './vistas/inicio';
+            $this->nombre_vista = 'inicio';
         }
 
         public function ultimoReconocimiento($idAlumnoRecibe) {
@@ -80,9 +80,9 @@
 
         public function vistaProfesor() {
             if ($_SESSION['perfil'] === 'P') {
-                $this->nombre_vista = './vistas/profesor';
+                $this->nombre_vista = 'profesor';
             } else {
-                $this->nombre_vista = './vistas/inicio';
+                $this->nombre_vista = 'inicio';
             }
         }
 

@@ -15,7 +15,7 @@
                     echo '<p>El último compañero al que le has enviado un reconocimiento es '.$_COOKIE['ultimo'].'.</p>';
                 }
             ?>
-            <form action="index.php?c=Controlador_rec&m=comprobarRec" method="POST">
+            <form action="index.php?c=controlador_rec&m=comprobarRec" method="POST">
                 <label>Momento:</label><br>
                 <input type="text" name="momento"><br><br>
 
@@ -35,7 +35,7 @@
                     ?>
                 </select><br><br>
                 <input type="submit" value="Enviar">
-                <p><a href="index.php?c=Controlador_rec&m=mostrarInicio" class="boton">Ir a la página de inicio</a></p>
+                <p><a href="index.php?c=controlador_rec&m=mostrarInicio" class="boton">Ir a la página de inicio</a></p>
             </form>
         </div>
     </body>

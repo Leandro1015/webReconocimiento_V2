@@ -9,7 +9,7 @@
     <body>    
         <div class="contenedor">
             <h2>Registro</h2>
-            <form action="index.php?c=Controlador_sesion&m=registrar" method="post">
+            <form action="index.php?c=controlador_sesion&m=registrar" method="post">
                 <label>Numero de Usuario:</label><br>
                 <input type="number" name="num_usuario"><br><br>
 
@@ -31,7 +31,7 @@
                 <label>Tipo de Usuario:</label><br>
                 <select name="perfil" required>
                     <?php
-                        foreach ($datos_vista as $tipos) {
+                        foreach ($datos_vista['tipos'] as $tipos) {
                             echo '<option value="'.$tipos['perfil'].'">'.$tipos['nombrePerfil'].'</option>';
                         }
                     ?>
@@ -40,11 +40,11 @@
                 <input type="submit" value="Enviar">
             </form>
             <?php 
-                /*if (isset($datos_vista)) {  //error pendiente
-                    echo "<p class='error-message'>" . $datos_vista . "</p>";
-                }*/
+                if (isset($datos_vista['mensaje'])) {
+                    echo "<p class='error-message'>" . $datos_vista['mensaje'] . "</p>";
+                }
             ?>
-            <p><a href="index.php?c=Controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
+            <p><a href="index.php?c=controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
         </div>
     </body>
 </html>
