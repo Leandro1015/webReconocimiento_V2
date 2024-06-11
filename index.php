@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+=======
+    require_once 'config/config.php';
+
+>>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
     // Verificar si el controlador y el método están definidos en la URL
     if (!isset($_GET["c"]) || !isset($_GET["m"])) {
         $nombre_controlador = CONTROLADOR_POR_DEFECTO;
@@ -18,7 +23,10 @@
     }
 
     $ruta_controlador = 'controladores/'.$nombre_controlador.'.php';
+<<<<<<< HEAD
     //die ($ruta_controlador);
+=======
+>>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
 
     if (file_exists($ruta_controlador)) {
         require_once $ruta_controlador;
