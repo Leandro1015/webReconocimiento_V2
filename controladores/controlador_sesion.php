@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
     require_once './modelos/m_identificacion.php';
+=======
+require_once './modelos/m_identificacion.php';
+>>>>>>> 72a97998bed395def911d43a590e849b0d82c96a
 
     class Controlador_sesion {
         public $nombre_vista;
@@ -47,9 +51,41 @@
             return ['tipos' => $datos_vista]; // Devolver los tipos de usuario en un array asociativo
         }
 
+<<<<<<< HEAD
         public function cerrarSesion(){
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
+=======
+    public function mostrarFRG() {
+        $this->nombre_vista = './vistas/registro_form';
+
+        $datos_vista = $this->identificacion->listarTipos();
+
+        return ['tipos' => $datos_vista]; // Devolver los tipos de usuario en un array asociativo
+    }
+
+    public function cerrarSesion(){
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        session_destroy();
+        $this->nombre_vista = './vistas/forminiciosesion'; // Redirige a la página de inicio de sesión
+    }
+
+    public function registrar() {
+        if ($this->validarCampos()) {
+            $num_usuario = $_POST['num_usuario'];
+            $nombre = $_POST['nombre'];
+            $correo = $_POST['correo'];
+            $contrasenia = $_POST['contrasenia'];
+            $tipo = $_POST['perfil'];
+
+            if (!empty($_POST['webReconocimiento'])) {
+                $webReconocimiento = $_POST['webReconocimiento'];
+            } 
+            else {
+                $webReconocimiento = null;
+>>>>>>> 72a97998bed395def911d43a590e849b0d82c96a
             }
             session_destroy();
             $this->nombre_vista = 'forminiciosesion'; // Redirige a la página de inicio de sesión
@@ -94,6 +130,7 @@
             return ['tipos' => $datos_vista, 'mensaje' => $msj];
         }
 
+<<<<<<< HEAD
         private function validarCampos() {
             if (!empty($_POST['num_usuario']) && !empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['contrasenia']) 
                 && !empty($_POST['confirmarContrasenia'])) 
@@ -103,6 +140,21 @@
             else {
                 return false;
             }
+=======
+        $this->nombre_vista = './vistas/registro_form';
+        $datos_vista = $this->identificacion->listarTipos();
+        return ['tipos' => $datos_vista, 'mensaje' => $msj];
+    }
+
+    private function validarCampos() {
+        if (!empty($_POST['num_usuario']) && !empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['contrasenia']) 
+            && !empty($_POST['confirmarContrasenia'])) 
+        {
+            return $_POST['contrasenia'] === $_POST['confirmarContrasenia'];
+        } 
+        else {
+            return false;
+>>>>>>> 72a97998bed395def911d43a590e849b0d82c96a
         }
     }
 

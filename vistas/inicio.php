@@ -17,7 +17,7 @@
                     echo '<p><a href="index.php?c=controlador_rec&m=verMisReconocimientos" class="boton">Ver Mis Reconocimientos</a></p>';
                 }
             ?>
-            <p><a href="index.php?c=controlador_sesion&m=cerrarSesion" class="boton">Cerrar Sesión</a></p>
+            <p><a href="index.php?c=Czzontrolador_sesion&m=cerrarSesion" class="boton">Cerrar Sesión</a></p>
         </div>
     </body>
 </html>
