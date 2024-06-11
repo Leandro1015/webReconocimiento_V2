@@ -34,10 +34,7 @@
             // Obtener la lista de alumnos desde el modelo
             $datos_vista = $this->reconocimiento->obtenerAlumnos($idAlumnoEnvia);
             
-<<<<<<< HEAD
             // Asignar el nombre de la vista
-=======
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
             $this->nombre_vista = 'enviar_reconocimiento';
         
             // Retornar los datos de la vista
@@ -67,10 +64,6 @@
                 if ($resultado === true) {
                     // Guardar el último reconocimiento enviado
                     $this->ultimoReconocimiento($idAlumnoRecibe);
-<<<<<<< HEAD
-=======
-
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
                     $this->nombre_vista = 'exito';
                 } else {
                     // Mensaje de error en caso de fallo
@@ -98,10 +91,8 @@
             // Obtener los reconocimientos desde el modelo
             $datos_vista = $this->reconocimiento->obtenerReconocimientos($idAlumnoRecibe);
         
-<<<<<<< HEAD
             // Asignar el nombre de la vista
-=======
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
+
             $this->nombre_vista = 'listado';
 
             // Retornar los datos de la vista
@@ -116,13 +107,9 @@
         public function verUnReconocimiento($id) {
             // Obtener los datos del reconocimiento desde el modelo
             $datos_vista = $this->reconocimiento->obtenerReconocimiento($id);
-<<<<<<< HEAD
             // Asignar el nombre de la vista
             $this->nombre_vista = 'verMiReconocimiento';
             // Retornar los datos de la vista
-=======
-            $this->nombre_vista = 'verMiReconocimiento';
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
             return $datos_vista;
         }
 
@@ -130,10 +117,7 @@
          * Muestra la vista de inicio.
          */
         public function mostrarInicio() {
-<<<<<<< HEAD
             // Asignar el nombre de la vista
-=======
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
             $this->nombre_vista = 'inicio';
         }
 
@@ -156,15 +140,10 @@
         public function vistaProfesor() {
             // Verificar si el perfil es de profesor
             if ($_SESSION['perfil'] === 'P') {
-<<<<<<< HEAD
                 // Asignar la vista de profesor
                 $this->nombre_vista = 'profesor';
             } else {
                 // Asignar la vista de inicio
-=======
-                $this->nombre_vista = 'profesor';
-            } else {
->>>>>>> ff18a8371c53a155d5766c1a6ff841027a786edf
                 $this->nombre_vista = 'inicio';
             }
         }
