@@ -11,13 +11,13 @@
             <h2>Inicio</h2>
             <?php
                 if (isset($_SESSION['perfil']) && $_SESSION['perfil'] === 'P') {
-                    echo '<p><a href="index.php?c=Controlador_rec&m=vistaProfesor" class="boton">Profesores</a></p>';
+                    echo '<p><a href="index.php?c=controlador_rec&m=vistaProfesor" class="boton">Profesores</a></p>';
                 } else {
-                    echo '<p><a href="index.php?c=Controlador_rec&m=mostrarFREC" class="boton">Enviar Reconocimiento</a></p>';
-                    echo '<p><a href="index.php?c=Controlador_rec&m=verMisReconocimientos" class="boton">Ver Mis Reconocimientos</a></p>';
+                    echo '<p><a href="index.php?c=controlador_rec&m=mostrarFREC" class="boton">Enviar Reconocimiento</a></p>';
+                    echo '<p><a href="index.php?c=controlador_rec&m=verMisReconocimientos" class="boton">Ver Mis Reconocimientos</a></p>';
                 }
             ?>
-            <p><a href="index.php?c=Controlador_sesion&m=cerrarSesion" class="boton">Cerrar Sesión</a></p>
+            <p><a href="index.php?c=controlador_sesion&m=cerrarSesion" class="boton">Cerrar Sesión</a></p>
         </div>
     </body>
 </html>

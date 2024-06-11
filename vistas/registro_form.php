@@ -9,7 +9,7 @@
     <body>    
         <div class="contenedor">
             <h2>Registro</h2>
-            <form action="index.php?c=Controlador_sesion&m=registrar" method="post">
+            <form action="index.php?c=controlador_sesion&m=registrar" method="post">
                 <label>Numero de Usuario:</label><br>
                 <input type="number" name="num_usuario"><br><br>
 
@@ -44,7 +44,7 @@
                     echo "<p class='error-message'>" . $datos_vista['mensaje'] . "</p>";
                 }
             ?>
-            <p><a href="index.php?c=Controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
+            <p><a href="index.php?c=controlador_sesion&m=mostrarFIS">¿Ya estás registrado? ¡Inicia aquí!</a></p>
         </div>
     </body>
 </html>

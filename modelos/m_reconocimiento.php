@@ -33,10 +33,10 @@
                 } else {
                     // Cerrar la consulta
                     $consultaPreparada->close();
-                    return "Error al ejecutar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                    return "Error al ejecutar la consulta: (".$this->conexion->errno.")".$this->conexion->error;
                 }
             } else {
-                return "Error al preparar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                return "Error al preparar la consulta: (".$this->conexion->errno.")".$this->conexion->error;
             }
         }
 
@@ -105,7 +105,7 @@
                 
                 return $reconocimientos;
             } else {
-                return "Error al preparar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                return "Error al preparar la consulta: (".$this->conexion->errno.") ".$this->conexion->error;
             }
         }        
 
@@ -139,7 +139,7 @@
                    
             } else {
               
-                return "Error al preparar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                return "Error al preparar la consulta: (".$this->conexion->errno.")".$this->conexion->error;
             }
         }
 

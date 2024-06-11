@@ -76,14 +76,14 @@
                     $resultado = true;
                 } else {
                     // Obtener el error
-                    $resultado = "Error al registrar alumno: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                    $resultado = "Error al registrar alumno: (".$this->conexion->errno.")".$this->conexion->error;
                 }
                 
                 // Cerrar la consulta
                 $consultaPreparada->close();
             } else {
                 // Si la preparación de la consulta falla, retornar el error
-                $resultado = "Error al preparar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                $resultado = "Error al preparar la consulta: (".$this->conexion->errno.")".$this->conexion->error;
             }
             
             return $resultado;
@@ -130,7 +130,7 @@
                 $consultaPreparada->close();
             } else {
                 // Si la preparación de la consulta falla, retornar el error
-                return "Error al preparar la consulta: (" . $this->conexion->errno . ") " . $this->conexion->error;
+                return "Error al preparar la consulta: (".$this->conexion->errno.")".$this->conexion->error;
             }
         }
 
@@ -146,5 +146,4 @@
             }
             return $tipos;
         }
-
     }
