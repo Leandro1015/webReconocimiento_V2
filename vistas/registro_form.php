@@ -31,6 +31,7 @@
                 <label>Tipo de Usuario:</label><br>
                 <select name="perfil" required>
                     <?php
+                        // Itera sobre los tipos de usuario obtenidos de la vista y crea opciones para el select
                         foreach ($datos_vista['tipos'] as $tipos) {
                             echo '<option value="'.$tipos['perfil'].'">'.$tipos['nombrePerfil'].'</option>';
                         }
@@ -40,6 +41,7 @@
                 <input type="submit" value="Enviar">
             </form>
             <?php 
+                // Muestra un mensaje de error si existe en los datos de la vista
                 if (isset($datos_vista['mensaje'])) {
                     echo "<p class='error-message'>" . $datos_vista['mensaje'] . "</p>";
                 }

@@ -134,10 +134,15 @@
             }
         }
 
+        /**
+         * Obtiene una lista de tipos de usuario desde la base de datos.
+         *
+         * @return array Lista de tipos de usuario, cada elemento es un array asociativo con las claves 'perfil' y 'nombrePerfil'.
+         */
         public function listarTipos() {
             $sql = "SELECT perfil, nombrePerfil FROM perfil";
             $resultado = $this->conexion->query($sql);
-        
+
             $tipos = [];
             if ($resultado && $resultado->num_rows > 0) {
                 while ($tipo = $resultado->fetch_assoc()) {

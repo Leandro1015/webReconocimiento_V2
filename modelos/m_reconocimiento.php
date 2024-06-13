@@ -143,22 +143,28 @@
             }
         }
 
+        /**
+         * Obtiene el nombre del último usuario que recibió un reconocimiento.
+         *
+         * @param int $idAlumnoRecibe El ID del usuario que recibió el reconocimiento.
+         * @return string|null El nombre del usuario que recibió el reconocimiento, o null si no se encuentra.
+         */
         public function ultimoReconocimiento($idAlumnoRecibe) {
             $SQL = "SELECT nombre FROM usuario WHERE num_usuario = ?";
             $consultaPreparada = $this->conexion->prepare($SQL);
-        
+
             if ($consultaPreparada) {
                 $consultaPreparada->bind_param("i", $idAlumnoRecibe);
                 $consultaPreparada->execute();
-        
+
                 $nombreAlumno = null;
                 $consultaPreparada->bind_result($nombreAlumno);
                 $consultaPreparada->fetch();
                 $consultaPreparada->close();
-        
+
                 return $nombreAlumno;
             } else {
                 return null;
             }
-        }    
+        }
     }

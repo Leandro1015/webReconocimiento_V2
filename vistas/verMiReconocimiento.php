@@ -10,13 +10,14 @@
         <div class="contenedor">
             <h2>Detalles del Reconocimiento</h2>
             <?php
+                // Verifica si existen datos en la vista
                 if (!empty($datos_vista)) {
                     $reconocimiento = $datos_vista;
-                    echo "<p>Momento: " . $reconocimiento['momento'] . "</p>";
-                    echo "<p>Descripción: " . $reconocimiento['descripcion'] . "</p>";
+                    echo "<p>Momento: " . $reconocimiento['momento'] . "</p>"; // Muestra el momento del reconocimiento
+                    echo "<p>Descripción: " . $reconocimiento['descripcion'] . "</p>"; // Muestra la descripción del reconocimiento
                 } 
                 else {
-                    echo "<p>Error: No se encontraron detalles de reconocimiento.</p>";
+                    echo "<p>Error: No se encontraron detalles de reconocimiento.</p>"; // Muestra un mensaje de error si no hay detalles de reconocimiento
                 }
             ?>
             <p><a href="index.php?c=controlador_rec&m=verMisReconocimientos" class="boton">Volver</a></p>
